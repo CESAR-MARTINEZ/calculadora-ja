@@ -36,10 +36,10 @@ var teclasuma = document.getElementById("mas");
 var teclapunto = document.getElementById("punto");
 var teclaigual = document.getElementById("igual");
 
-// var parametro1 = 0;
-// var parametro2 = 0;
-// var resultado = 0;
-// var operacion = "";
+var parametro1 = 0;
+var parametro2 = 0;
+var resultado = 0;
+var operacion = "";
 
 // teclaigual.onclick = function () {
 //   parametro2 = display.innerText;
