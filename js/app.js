@@ -41,34 +41,34 @@ var parametro2 = 0;
 var resultado = 0;
 var operacion = "";
 
-// teclaigual.onclick = function () {
-//   parametro2 = display.innerText;
-//   switch (operacion) {
-//     case "+":
-//       resultado = parseFloat(parametro1) + parseFloat(parametro2);
-//       display.innerText = String(resultado).substring(0, 8);
-//       parametro1 = 0;
-//       break;
-//     case "-":
-//       resultado = parseFloat(parametro1) - parseFloat(parametro2);
-//       display.innerText = String(resultado).substring(0, 8);
-//       parametro1 = 0;
-//       break;
-//     case "*":
-//       resultado = parseFloat(parametro1) * parseFloat(parametro2);
-//       display.innerText = String(resultado).substring(0, 8);
-//       parametro1 = 0;
-//       break;
-//     case "/":
-//       resultado = parseFloat(parametro1) / parseFloat(parametro2);
-//       display.innerText = String(resultado).substring(0, 8);
-//       parametro1 = 0;
-//       break;
+teclaigual.onclick = function () {
+  parametro2 = display.innerText;
+  switch (operacion) {
+    case "+":
+      resultado = parseFloat(parametro1) + parseFloat(parametro2);
+      display.innerText = String(resultado).substring(0, 8);
+      parametro1 = 0;
+      break;
+    case "-":
+      resultado = parseFloat(parametro1) - parseFloat(parametro2);
+      display.innerText = String(resultado).substring(0, 8);
+      parametro1 = 0;
+      break;
+    case "*":
+      resultado = parseFloat(parametro1) * parseFloat(parametro2);
+      display.innerText = String(resultado).substring(0, 8);
+      parametro1 = 0;
+      break;
+    case "/":
+      resultado = parseFloat(parametro1) / parseFloat(parametro2);
+      display.innerText = String(resultado).substring(0, 8);
+      parametro1 = 0;
+      break;
 
-//     default:
-//       break;
-//   }
-// };
+    default:
+      break;
+  }
+};
 
 teclasuma.onclick = function () {
   parametro1 = display.innerText;
