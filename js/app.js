@@ -70,132 +70,132 @@ var operacion = "";
 //   }
 // };
 
-// teclasuma.onclick = function () {
-//   parametro1 = display.innerText;
-//   operacion = "+";
-//   teclaon.click();
-// };
+teclasuma.onclick = function () {
+  parametro1 = display.innerText;
+  operacion = "+";
+  teclaon.click();
+};
 
-// teclaresta.onclick = function () {
-//   parametro1 = display.innerText;
-//   operacion = "-";
-//   teclaon.click();
-// };
-// teclamultiplica.onclick = function () {
-//   parametro1 = display.innerText;
-//   operacion = "*";
-//   teclaon.click();
-// };
-// tecladivide.onclick = function () {
-//   parametro1 = display.innerText;
-//   operacion = "/";
-//   teclaon.click();
-// };
-// teclaon.onclick = function () {
-//   display.innerText = "0";
-// };
+teclaresta.onclick = function () {
+  parametro1 = display.innerText;
+  operacion = "-";
+  teclaon.click();
+};
+teclamultiplica.onclick = function () {
+  parametro1 = display.innerText;
+  operacion = "*";
+  teclaon.click();
+};
+tecladivide.onclick = function () {
+  parametro1 = display.innerText;
+  operacion = "/";
+  teclaon.click();
+};
+teclaon.onclick = function () {
+  display.innerText = "0";
+};
 
-// teclasign.onclick = function () {
-//   if (display.innerText != "0") {
-//     if (display.innerText.length >= 0) {
-//       if (display.innerText.indexOf("-") == -1) {
-//         display.innerText = "-" + display.innerText;
-//       } else {
-//         display.innerText = display.innerText.substring(1);
-//       }
-//     }
-//   }
-// };
+teclasign.onclick = function () {
+  if (display.innerText != "0") {
+    if (display.innerText.length >= 0) {
+      if (display.innerText.indexOf("-") == -1) {
+        display.innerText = "-" + display.innerText;
+      } else {
+        display.innerText = display.innerText.substring(1);
+      }
+    }
+  }
+};
 
-// teclapunto.onclick = function () {
-//   if (display.innerText.length == 8) return;
-//   if (display.innerText.length >= 0) {
-//     if (display.innerText.indexOf(".") == -1) {
-//       display.innerText += ".";
-//     }
-//   }
-// };
+teclapunto.onclick = function () {
+  if (display.innerText.length == 8) return;
+  if (display.innerText.length >= 0) {
+    if (display.innerText.indexOf(".") == -1) {
+      display.innerText += ".";
+    }
+  }
+};
 
-// tecla0.onclick = function () {
-//   if (display.innerText.length == 8) return;
-//   if (display.innerText == "0") {
-//     display.innerText = "0";
-//     return;
-//   }
-//   if (display.innerText.length > 0) {
-//     display.innerText += "0";
-//     return;
-//   }
-// };
-// tecla1.onclick = function () {
-//   if (display.innerText.length == 8) return;
-//   if (display.innerText == "0") {
-//     display.innerText = "1";
-//     return;
-//   }
-//   display.innerText += "1";
-// };
-// tecla2.onclick = function () {
-//   if (display.innerText.length == 8) return;
-//   if (display.innerText == "0") {
-//     display.innerText = "2";
-//     return;
-//   }
-//   display.innerText += "2";
-// };
-// tecla3.onclick = function () {
-//   if (display.innerText.length == 8) return;
-//   if (display.innerText == "0") {
-//     display.innerText = "3";
-//     return;
-//   }
-//   display.innerText += "3";
-// };
-// tecla4.onclick = function () {
-//   if (display.innerText.length == 8) return;
-//   if (display.innerText == "0") {
-//     display.innerText = "4";
-//     return;
-//   }
-//   display.innerText += "4";
-// };
-// tecla5.onclick = function () {
-//   if (display.innerText.length == 8) return;
-//   if (display.innerText == "0") {
-//     display.innerText = "5";
-//     return;
-//   }
-//   display.innerText += "5";
-// };
-// tecla6.onclick = function () {
-//   if (display.innerText.length == 8) return;
-//   if (display.innerText == "0") {
-//     display.innerText = "6";
-//     return;
-//   }
-//   display.innerText += "6";
-// };
-// tecla7.onclick = function () {
-//   if (display.innerText.length == 8) return;
-//   if (display.innerText == "0") {
-//     display.innerText = "7";
-//     return;
-//   }
-//   display.innerText += "7";
-// };
-// tecla8.onclick = function () {
-//   if (display.innerText.length == 8) return;
-//   if (display.innerText == "0") {
-//     display.innerText = "8";
-//     return;
-//   }
-//   display.innerText += "8";
-// };
-// tecla9.onclick = function () {
-//   if (display.innerText.length == 8) return;
-//   if (display.innerText == "0") {
-//     display.innerText = "9";
-//     return;
-//   }
-//   display.innerText += "9";
-// };
+tecla0.onclick = function () {
+  if (display.innerText.length == 8) return;
+  if (display.innerText == "0") {
+    display.innerText = "0";
+    return;
+  }
+  if (display.innerText.length > 0) {
+    display.innerText += "0";
+    return;
+  }
+};
+tecla1.onclick = function () {
+  if (display.innerText.length == 8) return;
+  if (display.innerText == "0") {
+    display.innerText = "1";
+    return;
+  }
+  display.innerText += "1";
+};
+tecla2.onclick = function () {
+  if (display.innerText.length == 8) return;
+  if (display.innerText == "0") {
+    display.innerText = "2";
+    return;
+  }
+  display.innerText += "2";
+};
+tecla3.onclick = function () {
+  if (display.innerText.length == 8) return;
+  if (display.innerText == "0") {
+    display.innerText = "3";
+    return;
+  }
+  display.innerText += "3";
+};
+tecla4.onclick = function () {
+  if (display.innerText.length == 8) return;
+  if (display.innerText == "0") {
+    display.innerText = "4";
+    return;
+  }
+  display.innerText += "4";
+};
+tecla5.onclick = function () {
+  if (display.innerText.length == 8) return;
+  if (display.innerText == "0") {
+    display.innerText = "5";
+    return;
+  }
+  display.innerText += "5";
+};
+tecla6.onclick = function () {
+  if (display.innerText.length == 8) return;
+  if (display.innerText == "0") {
+    display.innerText = "6";
+    return;
+  }
+  display.innerText += "6";
+};
+tecla7.onclick = function () {
+  if (display.innerText.length == 8) return;
+  if (display.innerText == "0") {
+    display.innerText = "7";
+    return;
+  }
+  display.innerText += "7";
+};
+tecla8.onclick = function () {
+  if (display.innerText.length == 8) return;
+  if (display.innerText == "0") {
+    display.innerText = "8";
+    return;
+  }
+  display.innerText += "8";
+};
+tecla9.onclick = function () {
+  if (display.innerText.length == 8) return;
+  if (display.innerText == "0") {
+    display.innerText = "9";
+    return;
+  }
+  display.innerText += "9";
+};
