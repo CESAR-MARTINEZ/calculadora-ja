@@ -15,26 +15,26 @@ teclas.forEach((tecla) => {
   });
 });
 
-// var tecla0 = document.getElementById("0");
-// var tecla1 = document.getElementById("1");
-// var tecla2 = document.getElementById("2");
-// var tecla3 = document.getElementById("3");
-// var tecla4 = document.getElementById("4");
-// var tecla5 = document.getElementById("5");
-// var tecla6 = document.getElementById("6");
-// var tecla7 = document.getElementById("7");
-// var tecla8 = document.getElementById("8");
-// var tecla9 = document.getElementById("9");
+var tecla0 = document.getElementById("0");
+var tecla1 = document.getElementById("1");
+var tecla2 = document.getElementById("2");
+var tecla3 = document.getElementById("3");
+var tecla4 = document.getElementById("4");
+var tecla5 = document.getElementById("5");
+var tecla6 = document.getElementById("6");
+var tecla7 = document.getElementById("7");
+var tecla8 = document.getElementById("8");
+var tecla9 = document.getElementById("9");
 
-// var teclaon = document.getElementById("on");
-// var teclasign = document.getElementById("sign");
-// var teclaraiz = document.getElementById("raiz");
-// var tecladivide = document.getElementById("dividido");
-// var teclamultiplica = document.getElementById("por");
-// var teclaresta = document.getElementById("menos");
-// var teclasuma = document.getElementById("mas");
-// var teclapunto = document.getElementById("punto");
-// var teclaigual = document.getElementById("igual");
+var teclaon = document.getElementById("on");
+var teclasign = document.getElementById("sign");
+var teclaraiz = document.getElementById("raiz");
+var tecladivide = document.getElementById("dividido");
+var teclamultiplica = document.getElementById("por");
+var teclaresta = document.getElementById("menos");
+var teclasuma = document.getElementById("mas");
+var teclapunto = document.getElementById("punto");
+var teclaigual = document.getElementById("igual");
 
 // var parametro1 = 0;
 // var parametro2 = 0;
