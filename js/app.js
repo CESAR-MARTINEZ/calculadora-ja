@@ -38,61 +38,167 @@ var teclaigual = document.getElementById("igual");
 
 var parametro1 = 0;
 var parametro2 = 0;
-var resultado = 0;
-var operacion = "";
+
+const calculadora = (function () {
+  var operaciones = [];
+  var resultado = 0;
+
+  function actualizarResultado(resultadonuevo) {
+    resultado = resultadonuevo;
+  }
+  function suma(param1, param2) {
+    var resultado = parseFloat(param1) + parseFloat(param2);
+    actualizarResultado(Number(resultado).toFixed(2));
+    return resultado;
+  }
+  function resta(param1, param2) {
+    var resultado = parseFloat(param1) - parseFloat(param2);
+    actualizarResultado(Number(resultado).toFixed(2));
+    return resultado;
+  }
+  function multiplicacion(param1, param2) {
+    var resultado = parseFloat(param1) * parseFloat(param2);
+    actualizarResultado(Number(resultado).toFixed(2));
+    return resultado;
+  }
+  function division(param1, param2) {
+    var resultado = parseFloat(param1) / parseFloat(param2);
+    actualizarResultado(Number(resultado).toFixed(2));
+    return resultado;
+  }
+  function calcula() {
+    return resultado;
+  }
+  function operar() {
+    const { param1, operador } = operaciones[operaciones.length - 1];
+    if (operaciones.length > 1 && operador != "=") {
+      operaciones[operaciones.length - 2].param2 = param1;
+      var res = realizarOperacion(operaciones[operaciones.length - 2]);
+      operaciones[operaciones.length - 1].param1 = res;
+      return;
+    }
+    if (operaciones.length > 1 && operador == "=") {
+      var t1;
+      var t2;
+      if ( operaciones[operaciones.length - 2].param2 != null) {
+        t1 = param1;
+        t2 = operaciones[operaciones.length - 2].param2;
+        operaciones[operaciones.length - 2].param1 = t1;
+        operaciones[operaciones.length - 2].param2 = t2;
+      }else{
+        t1 = operaciones[operaciones.length - 2].param1;
+        t2 = param1;
+        operaciones[operaciones.length - 2].param1 = t1;
+        operaciones[operaciones.length - 2].param2 = t2;
+      }
+
+      var res = realizarOperacion(operaciones[operaciones.length - 2]);
+      operaciones[operaciones.length - 1].param2 = t2;
+      operaciones[operaciones.length - 1].operador = operaciones[operaciones.length - 2].operador;
+      operaciones[operaciones.length - 1].param1 = res;
+    }
+    operaciones.forEach((element) => {
+      console.log(element);
+    });
+  }
+  function realizarOperacion(param) {
+    var op = param.operador;
+    var resultadoparam = 0;
+    switch (op) {
+      case "+":
+        resultadoparam = suma(param.param1, param.param2);
+        break;
+      case "-":
+        resultadoparam = resta(param.param1, param.param2);
+        break;
+      case "*":
+        resultadoparam = multiplicacion(param.param1, param.param2);
+        break;
+      case "/":
+        resultadoparam = division(param.param1, param.param2);
+        break;
+      case "=":
+        resultadoparam = resultado;
+        break;
+    }
+    return resultadoparam;
+  }
+  return {
+    sumar: function (param1, operador) {
+      const op = { param1, operador };
+      operaciones.push(op);
+      operar();
+    },
+    restar: function (param1, operador) {
+      const op = { param1, operador };
+      operaciones.push(op);
+      operar();
+    },
+    multiplicar: function (param1, operador) {
+      const op = { param1, operador };
+      operaciones.push(op);
+      operar();
+    },
+    dividir: function (param1, operador) {
+      const op = { param1, operador };
+      operaciones.push(op);
+      operar();
+    },
+    calcula: function (param1, operador) {
+      const op = { param1, operador };
+      operaciones.push(op);
+      operar();
+    },
+    total: function () {
+      return resultado;
+    },
+    reset: function () {
+      operaciones = [];
+      resultado = 0;
+    },
+  };
+})();
 
 teclaigual.onclick = function () {
-  parametro2 = display.innerText;
-  switch (operacion) {
-    case "+":
-      resultado = parseFloat(parametro1) + parseFloat(parametro2);
-      display.innerText = String(resultado).substring(0, 8);
-      parametro1 = 0;
-      break;
-    case "-":
-      resultado = parseFloat(parametro1) - parseFloat(parametro2);
-      display.innerText = String(resultado).substring(0, 8);
-      parametro1 = 0;
-      break;
-    case "*":
-      resultado = parseFloat(parametro1) * parseFloat(parametro2);
-      display.innerText = String(resultado).substring(0, 8);
-      parametro1 = 0;
-      break;
-    case "/":
-      resultado = parseFloat(parametro1) / parseFloat(parametro2);
-      display.innerText = String(resultado).substring(0, 8);
-      parametro1 = 0;
-      break;
-
-    default:
-      break;
-  }
+  parametro1 = display.innerText;
+  operacion = "=";
+  calculadora.calcula(parametro1,operacion);
+  prepararOperacion();
+  display.innerText = calculadora.total();
+  // calculadora.reset();
 };
+
+function prepararOperacion() {
+  display.innerText = "";
+}
 
 teclasuma.onclick = function () {
   parametro1 = display.innerText;
   operacion = "+";
-  teclaon.click();
+  calculadora.sumar(parametro1, operacion);
+  prepararOperacion();
 };
-
 teclaresta.onclick = function () {
   parametro1 = display.innerText;
   operacion = "-";
-  teclaon.click();
+  calculadora.restar(parametro1, operacion);
+  prepararOperacion();
 };
 teclamultiplica.onclick = function () {
   parametro1 = display.innerText;
   operacion = "*";
-  teclaon.click();
+  calculadora.multiplicar(parametro1, operacion);
+  prepararOperacion();
 };
 tecladivide.onclick = function () {
   parametro1 = display.innerText;
   operacion = "/";
-  teclaon.click();
+  calculadora.dividir(parametro1, operacion);
+  prepararOperacion();
 };
 teclaon.onclick = function () {
   display.innerText = "0";
+  calculadora.reset();
 };
 
 teclasign.onclick = function () {
