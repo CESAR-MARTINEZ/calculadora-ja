@@ -39,6 +39,7 @@ var teclaigual = document.getElementById("igual");
 var parametro1 = 0;
 var parametro2 = 0;
 
+// Modulo de calculadora
 const calculadora = (function () {
   var operaciones = [];
   var resultado = 0;
